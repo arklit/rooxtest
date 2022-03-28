@@ -1,0 +1,44 @@
+.profile {
+  margin: 19px 41px 0 36px;
+  flex-direction: column;
+  width: 438px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button {
+    width: 116px;
+    height: 27px;
+    border: none;
+    background-color: #4B51EF;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 14px;
+    outline: none;
+    cursor: pointer;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    padding: 10px 215px 19px 12px;
+  }
+  &__item {
+    margin-top: 10px;
+  }
+  &__span {
+    margin: 0 0 3px 0;
+    font-size: 8px;
+    line-height: 9px;
+    color: #000000;
+  }
+  &__input {
+    background: #FFFFFF;
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 211px;
+  }
+}

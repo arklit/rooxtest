@@ -1,0 +1,41 @@
+.userItem {
+  width: 420px;
+  height: 72px;
+  background-color: #F3F3F3;
+  border-radius: 8px;
+  margin: 15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &__element {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    margin-top: 0;
+    margin-bottom: 7px;
+    color: #A3A3A3;
+  }
+  &__link {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration: none;
+    color: #4B51EF;
+    align-self: flex-end;
+  }
+  &__block {
+    display: flex;
+  }
+  &__answer {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: black;
+    margin: 0 0 0 7px;
+  }
+}

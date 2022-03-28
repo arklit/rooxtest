@@ -1,0 +1,37 @@
+
+.sortBar {
+ width: 152px;
+ height: 100vh;
+ background-color: #BDBDBD;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    padding-top: 35px;
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 0px;
+  }
+  &__button {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    background: #4B51EF;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    width: 86px;
+    height: 24px;
+    outline: none;
+    font-family: "Roboto";
+    cursor: pointer;
+  }
+  &__button:last-child {
+    width: 105px;
+    margin-top: 10px;
+  }
+}
