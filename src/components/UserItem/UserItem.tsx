@@ -4,8 +4,9 @@ import { IUser } from "../../types/types"
 
 interface UserItemProps {
   user: IUser;
+  onClick: (user: IUser) => void
 }
-function UserItem({user} : UserItemProps) {
+function UserItem({user, onClick} : UserItemProps) {
   return(
     <div className="userItem">
       <div className="userItem__container">
@@ -22,7 +23,7 @@ function UserItem({user} : UserItemProps) {
         <p className="userItem__answer">{user.company.name}</p>
         </div>
       </div>
-      <Link className="userItem__link" to="/profile">Подробнее</Link>
+      <p className="userItem__link" onClick={() => onClick(user)}>Подробнее</p>
     </div>
   )
 }
