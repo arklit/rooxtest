@@ -27,6 +27,7 @@
     border: 1px solid #F3F3F3;
     box-sizing: border-box;
     border-radius: 8px;
+    position: relative;
   }
   &__item {
     margin-top: 10px;
@@ -45,6 +46,7 @@
     width: 211px;
     font-size: 10px;
     line-height: 12px;
+
     &::placeholder {
       font-size: 10px;
       line-height: 12px;
@@ -54,5 +56,12 @@
   &__comment {
     width: 420px;
     height: 55px;
+    resize: none;
+  }
+  &__submit {
+    background-color: #52CF4F;
+    position: absolute;
+    bottom: -40px;
+    right: 0;
   }
 }

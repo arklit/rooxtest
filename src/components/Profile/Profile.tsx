@@ -3,9 +3,7 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import { IUser } from "../../types/types";
 import { useParams } from 'react-router-dom'
-type ProfileParams = {
-  id: string;
-}
+import { ProfileParams } from '../../types/types'
   function Profile() {
   const [user, setUser] = React.useState<IUser | null>(null)
   const params = useParams<ProfileParams>()
@@ -22,6 +20,7 @@ type ProfileParams = {
   React.useEffect(() => {
     getUser()
   }, [])
+
   return(
     <div className="profile">
       <div className="profile__header">
@@ -106,6 +105,7 @@ type ProfileParams = {
           <textarea className="profile__input profile__comment"
           id="comment"/>
         </div>
+        <button className="profile__button profile__submit" type="submit">Отправить</button>
       </form>
     </div>
   )

@@ -16,3 +16,6 @@ export interface IUser {
   website: string;
   company: ICompany;
 }
+export type ProfileParams = {
+  id: string;
+}
