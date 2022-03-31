@@ -4,9 +4,10 @@ import axios from "axios";
 import { IUser } from "../../types/types";
 import { useParams } from 'react-router-dom'
 import { ProfileParams } from '../../types/types'
-  function Profile() {
+function Profile() {
   const [user, setUser] = React.useState<IUser | null>(null)
   const params = useParams<ProfileParams>()
+  const [submitDisabled, setSubmitDisabled] = React.useState(true)
 
   async function getUser() {
     try {
@@ -15,6 +16,14 @@ import { ProfileParams } from '../../types/types'
     } catch (e) {
       console.log(e)
     }
+  }
+  function editClick() {
+    setSubmitDisabled(false)
+  }
+  function submitHandler(e: any) {
+    e.preventDefault()
+    console.log('click')
+    setSubmitDisabled(true)
   }
 
   React.useEffect(() => {
@@ -25,9 +34,9 @@ import { ProfileParams } from '../../types/types'
     <div className="profile">
       <div className="profile__header">
         <Title title="Профиль пользователя"/>
-        <button type="button" className="profile__button">Редактировать</button>
+        <button type="button" onClick={editClick} className="profile__button">Редактировать</button>
       </div>
-      <form className="profile__container">
+      <form className="profile__container" onSubmit={submitHandler}>
         <div className="profile__item">
           <p className="profile__span">Name</p>
           <input className="profile__input"
@@ -94,7 +103,7 @@ import { ProfileParams } from '../../types/types'
         <div className="profile__item">
           <p className="profile__span">Website</p>
           <input className="profile__input"
-           type="url"
+           type="text"
            id="website"
            required
            placeholder="city"
@@ -105,7 +114,9 @@ import { ProfileParams } from '../../types/types'
           <textarea className="profile__input profile__comment"
           id="comment"/>
         </div>
-        <button className="profile__button profile__submit" type="submit">Отправить</button>
+        <button disabled={submitDisabled} 
+        className={`profile__button profile__submit ${submitDisabled ? "profile__button_disabled" : ''}`}
+        type="submit">Отправить</button>
       </form>
     </div>
   )

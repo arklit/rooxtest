@@ -64,4 +64,8 @@
     bottom: -40px;
     right: 0;
   }
+  &__button_disabled {
+    cursor: not-allowed;
+    background-color: #F3F3F3;
+  }
 }
