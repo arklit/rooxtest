@@ -8,7 +8,6 @@ import axios from 'axios';
 
 function App() {
   const [users, setUsers] = React.useState<IUser[]>([])
-
   async function getUsers() {
     try {
       const response = await axios.get<IUser[]>('https://jsonplaceholder.typicode.com/users')
@@ -17,6 +16,7 @@ function App() {
       console.log(e)
     }
   }
+
 
   React.useEffect(() => {
     getUsers()

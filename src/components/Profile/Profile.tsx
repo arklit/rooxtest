@@ -22,9 +22,7 @@ function Profile() {
     website: user?.website,
   })
   
-  // function editName(event: any) {
-  //   setName(event.target.value)
-  // }
+
   async function getUser() {
     try {
       const response = await axios.get<IUser>('https://jsonplaceholder.typicode.com/users/'+ params.id)
@@ -39,10 +37,8 @@ function Profile() {
   }
   function submitHandler(e: any) {
     e.preventDefault()
-    console.log('click')
     setSubmitDisabled(true)
     setIsReadOnly(true)
-    console.log(values)
   }
 
   React.useEffect(() => {
@@ -64,10 +60,14 @@ function Profile() {
           name="name"
           readOnly={isReadOnly}
           required
+          minLength={2}
           onChange={handleChange}
           placeholder="Имя"
           value={isReadOnly ?  user?.name : values.name}/>
         </div>
+        { errors.name  && (
+          <span className="profile__error">{ errors.name }</span>
+        )}
         <div className="profile__item">
           <p className="profile__span">Username</p>
           <input className="profile__input"
@@ -80,6 +80,9 @@ function Profile() {
             placeholder="Ник"
             value={isReadOnly ?  user?.username : values.username}/>
         </div>
+        { errors.username  && (
+          <span className="profile__error">{ errors.username }</span>
+        )}
         <div className="profile__item">
           <p className="profile__span">E-mail</p>
           <input className="profile__input"
@@ -92,6 +95,9 @@ function Profile() {
             placeholder="email"
             value={isReadOnly ?  user?.email : values.email}/>
         </div>
+        { errors.email  && (
+          <span className="profile__error">{ errors.email }</span>
+        )}
         <div className="profile__item">
           <p className="profile__span">Street</p>
           <input className="profile__input"
@@ -104,6 +110,9 @@ function Profile() {
            placeholder="street"
            value={isReadOnly ?  user?.address.street : values.street}/>
         </div>
+        { errors.street  && (
+          <span className="profile__error">{ errors.street }</span>
+        )}
         <div className="profile__item">
           <p className="profile__span">City</p>
           <input className="profile__input"
@@ -116,6 +125,9 @@ function Profile() {
            placeholder="city"
            value={isReadOnly ?  user?.address.city : values.city}/>
         </div>
+        { errors.city  && (
+          <span className="profile__error">{ errors.city }</span>
+        )}
         <div className="profile__item">
           <p className="profile__span">Zip-code</p>
           <input className="profile__input"
@@ -128,6 +140,9 @@ function Profile() {
            placeholder="zip-code"
            value={isReadOnly ?  user?.address.zipcode : values.zipcode}/>
         </div>
+        { errors.zipcode  && (
+          <span className="profile__error">{ errors.zipcode }</span>
+        )}
         <div className="profile__item">
           <p className="profile__span">Phone</p>
           <input className="profile__input"
@@ -140,6 +155,9 @@ function Profile() {
            placeholder="phone"
            value={isReadOnly ?  user?.phone : values.phone}/>
         </div>
+        { errors.phone  && (
+          <span className="profile__error">{ errors.phone }</span>
+        )}
         <div className="profile__item">
           <p className="profile__span">Website</p>
           <input className="profile__input"
@@ -152,6 +170,9 @@ function Profile() {
            placeholder="city"
            value={isReadOnly ?  user?.website : values.website}/>
         </div>
+        { errors.website  && (
+          <span className="profile__error">{ errors.website }</span>
+        )}
         <div className="profile__item">
           <p className="profile__span">Comment</p>
           <textarea className="profile__input profile__comment"

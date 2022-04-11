@@ -1,7 +1,14 @@
 import React from "react";
 export function useForm(inputs: any) {
   const [values, setValues] = React.useState(inputs);
-  const [errors, setErrors] = React.useState({});
+  const [errors, setErrors] = React.useState({name: '', 
+  email: '', 
+  username: '', 
+  street: '', 
+  city: '',
+  zipcode: '',
+  phone: '',
+  website: ''});
   const [isValid, setIsValid] = React.useState(false);
 
   const handleChange = (e: any) => {
