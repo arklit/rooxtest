@@ -39,6 +39,7 @@ function Profile() {
     e.preventDefault()
     setSubmitDisabled(true)
     setIsReadOnly(true)
+    console.log(values)
   }
 
   React.useEffect(() => {
@@ -180,8 +181,8 @@ function Profile() {
           readOnly={isReadOnly}
           id="comment"/>
         </div>
-        <button disabled={submitDisabled} 
-        className={`profile__button profile__submit ${submitDisabled ? "profile__button_disabled" : ''}`}
+        <button disabled={!isValid} 
+        className={`profile__button profile__submit ${!isValid || submitDisabled ? "profile__button_disabled" : ''}`}
         type="submit">Отправить</button>
       </form>
     </div>
