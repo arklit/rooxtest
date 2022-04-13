@@ -35,7 +35,7 @@ function Profile() {
     setIsReadOnly(false)
     setSubmitDisabled(false)
   }
-  function submitHandler(e: any) {
+  function submitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setSubmitDisabled(true)
     setIsReadOnly(true)
