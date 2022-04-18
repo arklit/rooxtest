@@ -12,14 +12,15 @@ function Profile() {
   const params = useParams<ProfileParams>()
   const [submitDisabled, setSubmitDisabled] = React.useState(true)
   const { values, handleChange, errors, isValid } = useForm({
-    name: user?.name, 
-    username: user?.username,
-    email: user?.email,
-    city: user?.address.city,
-    street: user?.address.street,
-    zipcode: user?.address.zipcode,
-    phone: user?.phone,
-    website: user?.website,
+    name: '', 
+    username: '',
+    email: '',
+    city: '',
+    street: '',
+    zipcode: '',
+    phone: '',
+    website: '',
+    comment: ''
   })
   
 
@@ -39,7 +40,8 @@ function Profile() {
     e.preventDefault()
     setSubmitDisabled(true)
     setIsReadOnly(true)
-    console.log(values)
+    let json = JSON.stringify(values)
+    console.log(json)
   }
 
   React.useEffect(() => {
@@ -179,6 +181,8 @@ function Profile() {
           <textarea className="profile__input profile__comment"
           name="comment"
           readOnly={isReadOnly}
+          onChange={handleChange}
+          value={values.comment}
           id="comment"/>
         </div>
         <button disabled={!isValid} 
