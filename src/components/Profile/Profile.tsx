@@ -57,7 +57,7 @@ function Profile() {
       <form className="profile__container" onSubmit={submitHandler}>
         <div className="profile__item">
           <p className="profile__span">Name</p>
-          <input className="profile__input"
+          <input className={`profile__input ${errors.name ? 'profile__input_error' : ''}`}
           type="text"
           id="name"
           name="name"
@@ -73,7 +73,7 @@ function Profile() {
         )}
         <div className="profile__item">
           <p className="profile__span">Username</p>
-          <input className="profile__input"
+          <input className={`profile__input ${errors.username ? 'profile__input_error' : ''}`}
             type="text"
             id="username"
             name="username"
@@ -88,7 +88,7 @@ function Profile() {
         )}
         <div className="profile__item">
           <p className="profile__span">E-mail</p>
-          <input className="profile__input"
+          <input className={`profile__input ${errors.email ? 'profile__input_error' : ''}`}
             type="email"
             id="email"
             name="email"
@@ -103,7 +103,7 @@ function Profile() {
         )}
         <div className="profile__item">
           <p className="profile__span">Street</p>
-          <input className="profile__input"
+          <input className={`profile__input ${errors.street ? 'profile__input_error' : ''}`}
            type="text"
            id="street"
            name="street"
@@ -118,7 +118,7 @@ function Profile() {
         )}
         <div className="profile__item">
           <p className="profile__span">City</p>
-          <input className="profile__input"
+          <input className={`profile__input ${errors.city ? 'profile__input_error' : ''}`}
            type="text"
            id="city"
            name="city"
@@ -133,7 +133,7 @@ function Profile() {
         )}
         <div className="profile__item">
           <p className="profile__span">Zip-code</p>
-          <input className="profile__input"
+          <input className={`profile__input ${errors.zipcode ? 'profile__input_error' : ''}`}
            type="text"
            id="zipcode"
            name="zipcode"
@@ -148,7 +148,7 @@ function Profile() {
         )}
         <div className="profile__item">
           <p className="profile__span">Phone</p>
-          <input className="profile__input"
+          <input className={`profile__input ${errors.phone ? 'profile__input_error' : ''}`}
            type="text"
            id="phone"
            name="phone"
@@ -163,7 +163,7 @@ function Profile() {
         )}
         <div className="profile__item">
           <p className="profile__span">Website</p>
-          <input className="profile__input"
+          <input className={`profile__input ${errors.website ? 'profile__input_error' : ''}`}
            type="text"
            id="website"
            name='website'
