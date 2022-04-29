@@ -19,7 +19,7 @@ function App() {
       console.log(e)
     }
   }
-  const handleSort = (type: any) => {
+  const handleSort = (type: string) => {
     const draftList = [...users];
     switch (type) {
       case 'sortCity':
